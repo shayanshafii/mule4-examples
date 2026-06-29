@@ -30,7 +30,24 @@
 		</plugins>
 	</build>
 
-	<dependencies>
+	<dependencyManagement>
+        <dependencies>
+            <!-- Security: commons-beanutils unsafe reflection + deserialization -->
+            <dependency>
+                <groupId>commons-beanutils</groupId>
+                <artifactId>commons-beanutils</artifactId>
+                <version>1.11.0</version>
+            </dependency>
+            <!-- Security: commons-lang3 uncontrolled recursion -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.18.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
         <dependency>
             <groupId>org.mule.connectors</groupId>
             <artifactId>mule-http-connector</artifactId>
