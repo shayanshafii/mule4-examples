@@ -30,6 +30,17 @@
 		</plugins>
 	</build>
 
+	<!-- Security: pin vulnerable transitive dependencies (Snyk) -->
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>3.18.0</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<dependencies>
         <dependency>
             <groupId>org.mule.connectors</groupId>
