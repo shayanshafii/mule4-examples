@@ -34,7 +34,7 @@
         <dependency>
             <groupId>org.mule.connectors</groupId>
             <artifactId>mule-http-connector</artifactId>
-            <version>1.5.11</version>
+            <version>1.12.1</version>
             <classifier>mule-plugin</classifier>
         </dependency>
         <dependency>
@@ -52,7 +52,7 @@
     	<dependency>
             <groupId>com.mulesoft.connectors</groupId>
             <artifactId>mule-sfdc-analytics-connector</artifactId>
-            <version>3.1.8</version>
+            <version>3.21.1</version>
             <classifier>mule-plugin</classifier>
         </dependency>
     	<dependency>
@@ -62,6 +62,27 @@
             <classifier>mule-plugin</classifier>
         </dependency>
     </dependencies>
+	<dependencyManagement>
+		<!-- Pin patched Bouncy Castle pulled in transitively by mule-sfdc-analytics-connector -->
+		<dependencies>
+			<dependency>
+				<groupId>org.bouncycastle</groupId>
+				<artifactId>bcprov-jdk18on</artifactId>
+				<version>1.85</version>
+			</dependency>
+			<dependency>
+				<groupId>org.bouncycastle</groupId>
+				<artifactId>bcpkix-jdk18on</artifactId>
+				<version>1.85</version>
+			</dependency>
+			<dependency>
+				<groupId>org.bouncycastle</groupId>
+				<artifactId>bcutil-jdk18on</artifactId>
+				<version>1.85</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 
 	<repositories>
           <repository>
